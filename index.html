@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation de Mariage - Familles Djerdjouri & Friha - 29.12.2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #2c2c2c;
+            --bg: #faf8f5;
+            --white: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.7;
+            text-align: center;
+        }
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle, #ffffff 0%, #f3efe6 100%);
+            border-bottom: 1px solid #e6dec8;
+        }
+        .subtitle {
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.6rem;
+            font-weight: 400;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+        h1 span {
+            color: var(--gold);
+            font-style: italic;
+        }
+        .groom-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .date-badge {
+            margin-top: 25px;
+            padding: 12px 35px;
+            border: 1px solid var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .welcome-text {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+        /* Compte à rebours */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .time-box {
+            background: var(--white);
+            border: 1px solid #e6dec8;
+            padding: 15px 20px;
+            min-width: 90px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .time-box span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .time-box small {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+        }
+        /* Carte et Lieu */
+        .venue-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+        .venue-name {
+            font-weight: 500;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 65%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e6dec8;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .btn-maps {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 14px 30px;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        .btn-maps:hover {
+            background-color: #ab8742;
+        }
+        footer {
+            padding: 40px 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #777;
+            border-top: 1px solid #e6dec8;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2.4rem; }
+            .groom-name { font-size: 1.8rem; }
+            .map-container { padding-bottom: 85%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête de l'invitation -->
+    <section class="hero">
+        <p class="subtitle">Invitation de Mariage</p>
+        <h1>Famille Djerdjouri</h1>
+        <p class="groom-name">Mariage de Mustapha</p>
+        <div class="date-badge">29 . 12 . 2026 — 17h00</div>
+
+        <!-- Compte à rebours -->
+        <div class="countdown" id="countdown">
+            <div class="time-box"><span id="days">00</span><small>Jours</small></div>
+            <div class="time-box"><span id="hours">00</span><small>Heures</small></div>
+            <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
+            <div class="time-box"><span id="seconds">00</span><small>Secondes</small></div>
+        </div>
+    </section>
+
+    <!-- Message de Bienvenue -->
+    <section class="container">
+        <h2>Bienvenue</h2>
+        <p class="welcome-text">
+            Parce que les plus beaux moments de la vie ne valent d'être vécus que s'ils sont partagés avec ceux que l'on aime, <strong>la famille Djerdjouri</strong> ont l'immense joie de vous convier à célébrer le mariage de <strong>Mustapha</strong>. <br><br>
+            Préparez vos plus beaux sourires, nous avons hâte de créer des souvenirs inoubliables à vos côtés.
+        </p>
+
+        <!-- Lieu & Carte Google Maps -->
+        <div class="venue-card">
+            <h2>Lieu de la Réception</h2>
+            <p class="venue-name">Salle de dîner Le Chic d'Orient</p>
+            <p>Mardi 29 Décembre 2026 à partir de 17h00</p>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.3165642145887!2d3.2213404754933466!3d36.75506117024331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e4f0536efc719%3A0x6839cae0a5952991!2sSalle%20de%20diner%20Le%20Chic%20d'orient!5e1!3m2!1sfr!2sdz!4v1790500689744!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Salle+de+diner+Le+Chic+d'orient&query_place_id=ChIJGcfvNgVPjhIRkSmVpeDKOWg" target="_blank" class="btn-maps">
+                Ouvrir l'itinéraire dans Google Maps
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        Familles Djerdjouri — Soyez les bienvenus
+    </footer>
+
+    <!-- Script du compte à rebours fixé au 29/12/2026 à 17h00 -->
+    <script>
+        const weddingDate = new Date("2026-12-29T17:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<p>C'est le grand jour !</p>";
+                return;
+            }
+
+            document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+
+        // Lancement immédiat puis actualisation chaque seconde
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
